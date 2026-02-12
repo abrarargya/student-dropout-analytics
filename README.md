@@ -34,8 +34,46 @@ cd student-dropout-analytics
 pip install -r requirements.txt
 
 ```
+### Menjalankan Business Dashboard
+
+Untuk melihat visualisasi data dan dashboard interaktif, proyek ini menggunakan Metabase yang dijalankan di lingkungan lokal menggunakan Docker. File database yang berisi konfigurasi dashboard (metabase.db.mv.db) telah disertakan dalam submission ini.
+
+Berikut langkah-langkah untuk menyiapkan lingkungan Metabase:
+
+1. Pastikan Docker Aktif Pastikan Docker Desktop atau Docker Engine sudah terinstall dan berjalan di komputer Anda.
+
+2. Pull Image Metabase Unduh image Metabase terbaru dari Docker Hub dengan menjalankan perintah berikut di terminal:
+
+```Bash
+docker pull metabase/metabase:latest
+```
+Jalankan Container Jalankan container Metabase di port 3000:
+```Bash
+docker run -d -p 3000:3000 --name metabase metabase/metabase
+```
+
+(Catatan: Tunggu 1-2 menit hingga proses inisialisasi Metabase selesai).
+
+3. Akses & Login Buka browser dan kunjungi http://localhost:3000. Gunakan kredensial berikut untuk masuk:
+
+* Email: root@mail.com
+
+* Password: root123
+
+Restore Database Agar dashboard yang telah dibuat dapat tampil, file database bawaan container harus diganti dengan file metabase.db.mv.db yang disertakan dalam proyek ini. Anda dapat menyalin file tersebut ke dalam container yang sedang berjalan menggunakan perintah:
+
+``` Bash
+docker cp ./metabase.db.mv.db metabase:/metabase.db.mv.db
+```
+Setelah menyalin, restart container agar perubahan diterapkan (docker restart metabase).
 
 ## Business Dashboard
+
+
+![alt text](dashboard-1.jpg)
+
+
+
 Dashboard interaktif  dibuat menggunakan Metabase yang terhubung dengan database Supabase. Dashboard ini dirancang untuk level manajemen guna memantau kesehatan institusi secara makro.
 
 Fitur Utama Dashboard:
