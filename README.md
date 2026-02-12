@@ -69,10 +69,7 @@ Setelah menyalin, restart container agar perubahan diterapkan (docker restart me
 
 ## Business Dashboard
 
-
-![alt text](dashboard-1.jpg)
-
-
+![alt text](abrar_argya_adana-dashboard.jpg)
 
 Dashboard interaktif  dibuat menggunakan Metabase yang terhubung dengan database Supabase. Dashboard ini dirancang untuk level manajemen guna memantau kesehatan institusi secara makro.
 
