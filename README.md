@@ -101,6 +101,8 @@ Cara Menjalankan Model :
 streamlit run app.py
 ```
 
+Link deployment : 
+https://student-dropout-analytics.streamlit.app/
 
 
 ## Conclusion
